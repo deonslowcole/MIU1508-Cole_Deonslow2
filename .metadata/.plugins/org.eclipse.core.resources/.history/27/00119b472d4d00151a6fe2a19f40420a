@@ -1,0 +1,57 @@
+var entWindow = function(){
+	
+	//declare a variable for the create the news screen.
+	var newsWindow = Ti.UI.createWindow({
+		backgroundColor: "#FFDC96",
+		title: "Your Entertainment News",
+		exitOnClose: true,
+  		fullscreen: false
+		});
+		
+	navWindow.openWindow(newsWindow);
+	
+
+	
+	//declare a variable for the first news image.
+	var headView = Ti.UI.createView({
+		top: 10,
+		backgroundColor: "#FFDC96"
+	});
+	
+	var headImage = Ti.UI.createImageView({
+		top: headView.top + 20,
+		image: "lucy.jpg",
+		width: 300,
+		Height: 300
+	});
+	
+	var headViewInfo = Ti.UI.createView({
+		top: headImage.top + headImage.height + 30,
+		width: 300,
+		height: 300
+	});
+
+	var headText = Ti.UI.createLabel({
+		text: "The actress’s rep confirmed to PEOPLE the birth of a son via surrogate. 'Lucy Liu is the proud mother of Rockwell Lloyd Liu, brought into the world via gestational carrier. Mom and baby are healthy and happy.' The actress, 46, shared a photo of her son via Instagram on Thursday, with the caption, 'Introducing the new little man in my life, my son Rockwell Lloyd Liu. In [love]!'",
+		font:{fontFamily: "Avenir Next Condensed", fontSize: 20}	
+	});
+	
+	headViewInfo.add(headText);
+	headView.add(headImage, headViewInfo);
+	
+//var mainView = Ti.UI.createView({ backgroundColor:'#123' });
+var view2 = Ti.UI.createView({ backgroundColor:'#246' });
+var view3 = Ti.UI.createView({ backgroundColor:'#48b' });
+
+var scrollableView = Ti.UI.createScrollableView({
+  views:[headView,view2,view3],
+  showPagingControl:true
+});
+	
+	//newsBox.add(newsText);
+	//newsWindow.add(newsBox);
+	newsWindow.add(scrollableView);
+	navWindow.open();
+};
+
+signBox.addEventListener("click", entWindow);

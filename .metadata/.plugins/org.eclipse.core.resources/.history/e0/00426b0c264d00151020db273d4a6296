@@ -1,0 +1,369 @@
+//declare a variable for the function to open the create an account window.
+var acctWindow = function(){
+	
+	//declare a variable for the create an account screen.
+	var actWindow = Ti.UI.createWindow({
+		backgroundColor: "#FFDC96",
+		exitOnClose: true,
+  		fullscreen: false
+		});
+	//declare a variable for a view to be placed at the top of the window for a title.
+	var titleBox = Ti.UI.createView({
+		backgroundColor: "#fff",
+		top: 0,
+		height: 70
+	});	
+	
+	//declare a variable for the text that will be the title of the page to be placed in the view.
+	var titleText = Ti.UI.createLabel({
+		text: "Create An Account",
+		color: "#000",
+		font: {fontFamily: "Arial", fontSize: 18},
+		textAlign: "center",
+		bottom: 0
+	});
+	
+	//declare a variable for a view to be placed at the top to let user know of requred fields.
+	var reqBox = Ti.UI.createView({
+		top: titleBox.top + titleBox.height + 20,
+		height: 25,
+		width: 100,
+		left: 35
+	});
+	
+	//declare a variable for the text that will be placed in the required fields view.
+	var reqText = Ti.UI.createLabel({
+		text: "* = required fields",
+		color: "#BF2121",
+		font: {fontFamily: "Arial", fontSize: 12},
+		textAlign: "left",
+	});
+	
+	//declare a variable for a view to be placed to let user know of the first name input field.
+	var firstBox = Ti.UI.createView({
+		top: reqBox.top + reqBox.height + 20,
+		height: 20,
+		width: 100,
+		left: 35
+	});
+	
+	//declare a variable for the text that will be placed in the first name required field view.
+	var firstText = Ti.UI.createLabel({
+		text: "Enter First Name*",
+		color: "#000",
+		font: {fontFamily: "Arial", fontSize: 12},
+		textAlign: "left",
+	});
+	
+	//declare a variable for the text area for user to input text for name.
+	var firstTextArea = Ti.UI.createTextArea({
+		  borderWidth: 2,
+		  borderColor: '#bbb',
+		  borderRadius: 5,
+		  color: '#888',
+		  font: {fontSize:20, fontWeight:'bold'},
+		  keyboardType: Ti.UI.KEYBOARD_NUMBER_PAD,
+		  returnKeyType: Ti.UI.RETURNKEY_GO,
+		  textAlign: 'left',
+		  value: null,
+		  top: firstBox.top + firstBox.height,
+		  width: 300, 
+		  height : 40
+	 });
+	 
+	 //declare a variable for a view to be placed to let user know of the last name input field.
+	var lastBox = Ti.UI.createView({
+		top: firstTextArea.top + firstTextArea.height + 20,
+		height: 20,
+		width: 100,
+		left: 35
+	});
+	
+	//declare a variable for the text that will be placed in the last name required field view.
+	var lastText = Ti.UI.createLabel({
+		text: "Enter Last Name*",
+		color: "#000",
+		font: {fontFamily: "Arial", fontSize: 12},
+		textAlign: "left",
+	});
+	
+	//declare a variable for the text area for user to input text for name.
+	var lastTextArea = Ti.UI.createTextArea({
+		  borderWidth: 2,
+		  borderColor: '#bbb',
+		  borderRadius: 5,
+		  color: '#888',
+		  font: {fontSize:20, fontWeight:'bold'},
+		  keyboardType: Ti.UI.KEYBOARD_NUMBER_PAD,
+		  returnKeyType: Ti.UI.RETURNKEY_GO,
+		  textAlign: 'left',
+		  value: null,
+		  top: lastBox.top + lastBox.height,
+		  width: 300, 
+		  height : 40
+	 });
+	
+	//declare a variable for a view to be placed to let user know of the email input field.
+	var emailBox = Ti.UI.createView({
+		top: lastTextArea.top + lastTextArea.height + 20,
+		height: 20,
+		width: 300,
+		left: 35
+	});
+	
+	//declare a variable for the text that will be placed in the email address required field view.
+	var emailText = Ti.UI.createLabel({
+		text: "Enter Email Address*  ex. name@emailaddress.com",
+		color: "#000",
+		font: {fontFamily: "Arial", fontSize: 12},
+		textAlign: "left",
+	});
+	
+	//declare a variable for the text area for user to input text for email address.
+	var emailTextArea = Ti.UI.createTextArea({
+		  borderWidth: 2,
+		  borderColor: '#bbb',
+		  borderRadius: 5,
+		  color: '#888',
+		  font: {fontSize:20, fontWeight:'bold'},
+		  keyboardType: Ti.UI.KEYBOARD_NUMBER_PAD,
+		  returnKeyType: Ti.UI.RETURNKEY_GO,
+		  textAlign: 'left',
+		  value: null,
+		  top: emailBox.top + emailBox.height,
+		  width: 300, 
+		  height : 40
+	 });
+	
+	//declare a variable for a view to be placed to let user know of the user name input field.
+	var userBox = Ti.UI.createView({
+		top: emailTextArea.top + emailTextArea.height + 20,
+		height: 20,
+		width: 100,
+		left: 35
+	});
+	
+	//declare a variable for the text that will be placed in the user name required field view.
+	var userText = Ti.UI.createLabel({
+		text: "Enter User Name*",
+		color: "#000",
+		font: {fontFamily: "Arial", fontSize: 12},
+		textAlign: "left",
+	});
+	
+	//declare a variable for the text area for user to input text for user name.
+	var userTextArea = Ti.UI.createTextArea({
+		  borderWidth: 2,
+		  borderColor: '#bbb',
+		  borderRadius: 5,
+		  color: '#888',
+		  font: {fontSize:20, fontWeight:'bold'},
+		  keyboardType: Ti.UI.KEYBOARD_NUMBER_PAD,
+		  returnKeyType: Ti.UI.RETURNKEY_GO,
+		  textAlign: 'left',
+		  value: null,
+		  top: userBox.top + userBox.height,
+		  width: 300, 
+		  height : 40
+	 });
+	
+	//declare a variable for a view to be placed to let user know of the password input field.
+	var passBox = Ti.UI.createView({
+		top: userTextArea.top + userTextArea.height + 20,
+		height: 20,
+		width: 100,
+		left: 35
+	});
+	
+	//declare a variable for the text that will be placed in the password required field view.
+	var passText = Ti.UI.createLabel({
+		text: "Enter Password*",
+		color: "#000",
+		font: {fontFamily: "Arial", fontSize: 12},
+		textAlign: "left",
+	});
+	
+	//declare a variable for the text area for user to input text for password.
+	var passTextArea = Ti.UI.createTextArea({
+		  borderWidth: 2,
+		  borderColor: '#bbb',
+		  borderRadius: 5,
+		  color: '#888',
+		  font: {fontSize:20, fontWeight:'bold'},
+		  keyboardType: Ti.UI.KEYBOARD_NUMBER_PAD,
+		  returnKeyType: Ti.UI.RETURNKEY_GO,
+		  textAlign: 'left',
+		  value: null,
+		  top: passBox.top + passBox.height,
+		  width: 300, 
+		  height : 40
+	 });
+	
+	//declare a variable for a view to be placed to let user know of the gender input field.
+	var genderBox = Ti.UI.createView({
+		top: passTextArea.top + passTextArea.height + 20,
+		height: 20,
+		width: 180,
+		left: 35
+	});
+	
+	//declare a variable for the text that will be placed in the gender required field view.
+	var genderText = Ti.UI.createLabel({
+		text: "Enter Gender* (Male or Female)",
+		color: "#000",
+		font: {fontFamily: "Arial", fontSize: 12},
+		textAlign: "left",
+	});
+	
+	//declare a variable for the text area for user to input text for password.
+	var genderTextArea = Ti.UI.createTextArea({
+		  borderWidth: 2,
+		  borderColor: '#bbb',
+		  borderRadius: 5,
+		  color: '#888',
+		  font: {fontSize:20, fontWeight:'bold'},
+		  keyboardType: Ti.UI.KEYBOARD_NUMBER_PAD,
+		  returnKeyType: Ti.UI.RETURNKEY_GO,
+		  textAlign: 'left',
+		  value: null,
+		  top: genderBox.top + genderBox.height,
+		  width: 100, 
+		  height : 40,
+		  left: 35
+	 });
+	 
+
+	
+	//declare a variable for the continue button view
+	var contButton = Ti.UI.createView({
+		top: passTextArea.top + passTextArea.height + 80,
+		borderColor: "#000",
+		borderRadius: 10,
+		right: 35,
+		backgroundColor: "#0084C4",
+		height: 50,
+		width: 100,
+		borderRadius: 10,
+		viewShadowColor: "#000",
+		viewShadowOffset:(-10,0),
+		backgroundGradient: {
+			type: "linear",
+			startPoint: { x: 0, y: 25 },
+	        endPoint: { x: 0, y: 100 },
+	        colors: [{ color: "#0084C4", offset: 0.0}, {color: "#006393", offset: 0.25}],
+	    }
+	});
+	
+	//declare a variable for the text that will be placed in the continue field view.
+	var contText = Ti.UI.createLabel({
+		text: "Continue to Step 2",
+		color: "#fff",
+		font: {fontFamily: "Arial", fontSize: 18},
+		textAlign: "center",
+	});
+
+	//add the labels to the views, add all of the views to the account screen window and open the account screen window.
+		titleBox.add(titleText);
+		reqBox.add(reqText);
+		firstBox.add(firstText);
+		lastBox.add(lastText);
+		emailBox.add(emailText);
+		userBox.add(userText);
+		passBox.add(passText);
+		genderBox.add(genderText);
+		contButton.add(contText);
+		actWindow.add(titleBox, reqBox, firstBox, firstTextArea, lastBox, lastTextArea, emailBox, emailTextArea, userBox, userTextArea, passBox, passTextArea, genderBox, genderTextArea, contButton, alert);
+		actWindow.open();
+	
+
+//--------------------------------------------------------------------------------------------------------------------------//
+	
+	
+//declare a variable for the function to open the create an account window.
+var topicsWindow = function(){
+
+	
+	//declare a variable for the create an topics screen.
+	var topicWindow = Ti.UI.createWindow({
+		backgroundColor: "#FFDC96"
+		});
+		
+	//declare a variable for the topics view to be placed at the top of the window for a title.
+	var topTitleBox = Ti.UI.createView({
+		backgroundColor: "#fff",
+		top: 0,
+		height: 70
+	});	
+	
+	//declare a variable for the text that will be the title of the page to be placed in the view.
+	var topTitleText = Ti.UI.createLabel({
+		text: "Pick Your Topics",
+		color: "#000",
+		font: {fontFamily: "Arial", fontSize: 18},
+		textAlign: "center",
+		bottom: 0
+	});
+
+	//declare a variable for json array of topics
+	var topicRay = ["Gossip", "Sports", "Traveling", "Home & Garden", "Fitness", "Fashion", "Automotive", "Strange News"];
+	
+	//declare a variable for the table view
+	var topicsTable = Ti.UI.createTableView({
+		//left: 40,
+		//right: 40,
+		top: topTitleBox.top + topTitleBox.height + 10,
+		height: 350,
+		moveable: true,
+		scrollable: false,
+		editable: true
+	});
+	
+	//declare a variable to create a table view
+	var topicSection = Ti.UI.createTableViewSection({
+		});
+
+	//write a for loop that will pull topics from the array
+	for(var i=0; i<topicRay.length; i++){
+		var topicRow = Ti.UI.createTableViewRow({
+			title: topicRay[i],
+			hasCheck: false,
+			moveable: true,
+			editable: true
+		});
+		
+		topicRow.setHasCheck(true);
+		
+		var topicSwitch = Ti.UI.createSwitch({
+	  		value:true,
+	  		right: 0
+		});
+		topicSwitch.addEventListener('change',function(e){
+	  	Ti.API.info('Switch value: ' + basicSwitch.value);
+		});
+		
+		topicSection.add(topicRow, topicSwitch);
+};
+	
+	//declare a variable to hold the array that are the topics for the section 
+	var topicSections = [topicSection];
+	
+	//set the rows to the table view from the section array variable
+	topicsTable.setData(topicSections);
+
+	//add the labels to the views, add all of the views to the account screen window and open the topic screen window.
+	topTitleBox.add(topTitleText);
+	topicWindow.add(topTitleBox, topicsTable);
+	topicWindow.open();
+	
+};
+
+//add an event listener to the create an account button to go to the create a topics page.
+contButton.addEventListener("click", topicsWindow);
+console.log(genderTextArea.value);
+		
+};
+
+
+//add an event listener to the create an account button to go to the create an account page.
+actBox.addEventListener("click", acctWindow);
+

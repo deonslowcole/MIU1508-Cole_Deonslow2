@@ -1,0 +1,49 @@
+//declare a variable for the function to open the create an account window.
+/*var categoryWindow = function(){
+	
+	if (firstTextArea.value === " "){
+			alert ("Please enter your First Name.");
+		}
+		else if (lastTextArea.value === " "){
+			alert ("Please enter your Last Name.");
+		}
+		else if (emailTextArea.value === " "){
+			alert("Please enter a Email Address.");			
+		}
+		else if (userTextArea.value === " "){
+			alert("Please create a User Name.");
+		}
+		else if (passTextArea.value === " "){
+			alert("Please enter a Password");
+		}
+		else (genderTextArea.value !== "male" || "female");{
+			alert("Please enter your Gender");
+		};
+	
+	
+	//declare a variable for the create an account screen.
+	var catWindow = Ti.UI.createWindow({
+		backgroundColor: "#FFDC96"
+		});
+	//declare a variable for a view to be placed at the top of the window for a title.
+	var titleBox = Ti.UI.createView({
+		backgroundColor: "#fff",
+		top: 0,
+		height: 70
+	});	
+	
+	//declare a variable for the text that will be the title of the page to be placed in the view.
+	var titleText = Ti.UI.createLabel({
+		text: "Pick Your Topics",
+		color: "#000",
+		font: {fontFamily: "Arial", fontSize: 18},
+		textAlign: "center",
+		bottom: 0
+	});
+
+};
+
+var loadAccount = ("account");
+//exports.category = categoryWindow;
+contButton.addEventListener("click", categoryWindow);
+*/
